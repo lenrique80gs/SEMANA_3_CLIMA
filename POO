@@ -1,0 +1,27 @@
+class ClimaSemanal:
+    """Clase para representar y calcular el promedio semanal del clima."""
+    def __init__(self):
+        self.temperaturas = []
+
+    def ingresar_temperaturas(self):
+        """Método para ingresar las temperaturas de los 7 días de la semana."""
+        for dia in range(1, 8):
+            temp = float(input(f"Ingrese la temperatura del día {dia}: "))
+            self.temperaturas.append(temp)
+
+    def calcular_promedio(self):
+        """Método para calcular el promedio semanal de las temperaturas."""
+        if not self.temperaturas:
+            raise ValueError("No se han ingresado temperaturas.")
+        return sum(self.temperaturas) / len(self.temperaturas)
+
+def main_poo():
+    """Función principal para ejecutar el programa en estilo POO."""
+    print("\n*** Programación Orientada a Objetos ***")
+    clima = ClimaSemanal()
+    clima.ingresar_temperaturas()
+    promedio = clima.calcular_promedio()
+    print(f"El promedio semanal de temperaturas es: {promedio:.2f}")
+
+# Llamada a la función principal
+main_poo()
